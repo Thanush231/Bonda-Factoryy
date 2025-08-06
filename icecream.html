@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bonda Factory - Ice Cream Order</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            border: 1px solid black;
+            padding: 30px;
+            margin:auto ;
+            width: 40%;
+            border-radius: 10px;
+        }
+
+        .image-box img {
+            width: 250px;
+            border:1px;
+            padding:15px;
+            border-radius: 50px;
+            display:flex;
+            
+            flex-direction: row;
+        }
+
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            
+            width: 200px;
+        }
+
+        .form-box input, .form-box select, .form-box button {
+            margin-bottom: 15px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        function placeOrder() {
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var flavor = document.getElementById("flavor").value;
+            var quantity = document.getElementById("quantity").value;
+
+            if (email === "" || name === "" || phone === "" || flavor === "" || quantity === "") {
+                alert("Please fill out all fields.");
+            } else {
+                alert("Thank you, " + name + "! Your order for " + quantity + " " + flavor + " ice cream(s) has been placed.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Bonda Factory by Naturals</h1>
+    <p>Order Your Favorite Ice Cream!</p>
+
+    <div class="container">
+        <!-- Image -->
+        <div class="image-box">
+            <img src="https://naturalicecreams.in/wp-content/uploads/2024/01/Bonda-Factory-blog-image-1.jpg" alt="Tender Coconut">
+            
+        </div>
+
+        
+        <div class="form-box">
+            <input type="email" id="email" placeholder="Email">
+            <input type="text" id="name" placeholder="Name">
+            <input type="number" id="phone" placeholder="Phone Number">
+
+            <input type="text" id="flavor" placeholder="Flavor">
+
+            <input type="number" id="quantity" placeholder="Quantity" min="1">
+
+            <button type="button" onclick="placeOrder()">ORDER</button>
+        </div>
+    </div>
+
+</body>
+</html>
